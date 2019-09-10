@@ -1,0 +1,10 @@
+{% include 'base.html' %}
+{% block  content %}
+<div class="container text-center">
+    {% for foods in detailspage %}
+        <h3>{{ foods.infoname }}</h3>
+        <img src="{{ foods.img.url }}" height="200px" width="200px"/><br>
+        <p>{{ foods.info }}</p>
+    {% endfor %}
+</div>
+{% endblock %}

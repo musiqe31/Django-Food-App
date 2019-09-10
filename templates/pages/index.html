@@ -1,0 +1,66 @@
+{% include 'base.html' %}
+{% load static %}
+{% block content %}
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+       <header>
+  <div class="overlay"></div>
+  <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+    <source src="https://www.pexels.com/video/1111421/download/?search_query=food&tracking_id=fvrn0meygcd" type="video/mp4">
+  </video>
+  <div class="container h-100">
+    <div class="d-flex h-100 text-center align-items-center">
+      <div class="w-100 text-white">
+        <h1 class="display-3">Food Central</h1>
+        <p class="lead mb-0">Your Place For All things Food</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="bg-light">
+  <div>
+    <div class="row">
+        <div class="col-md-12 text-center text-dark">
+            <p><i><b>Find The Food That Is Right For You</b></i></p>
+            <h3 style="color: #76d561"><b>Enjoy The Meals In Your Life</b></h3>
+        </div>
+      <div class="col-md-12 mx-auto text-dark text-center" style="padding: 40px">
+        <p>rem Ipsum is nd types
+                        been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                        galley of type and scrambled it to make a type</p>
+        <p>rem Ipsum is simply dummy text of the printing and ty a type</p>
+        <p>rem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                        an unknown printer took a
+                        galley of type and scrambled it to make a type</p>
+        <p class="mb-0">
+
+        </p>
+      </div>
+    </div>
+  </div>
+          <div>
+    <div class="row">
+    {% for food in foodoftheday %}
+        <div class="col-md-4 text-center mx-auto" style="padding: 20px">
+            <a href="{% url 'details' food.id %}" style="background: #ec0909"><img src="{{food.img.url}}" width="200" height="200"/><br>
+            <h4 class="text-dark"><b>{{food.infoname}}</b></h4><br></a>
+        </div>
+{% endfor %}
+
+    </div>
+  </div>
+</section>
+        <!-- Footer -->
+<footer class="page-footer font-small blue">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2018 Copyright:
+    <a href="{% url 'index' %}"> Agbakwu</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+{% endblock %}
